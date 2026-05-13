@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>崔数｜上海大学理学院数学系人物介绍</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #003b7a;
+      --ink: #111827;
+      --muted: #5f6f86;
+      --line: #d9e2ef;
+      --red: #a31f34;
+      --gold: #b78b37;
+      --dark: #0b1220;
+      --bg: #f7f9fc;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .topbar {
+      background: var(--dark);
+      color: rgba(255,255,255,.82);
+      font-size: 13px;
+      letter-spacing: .02em;
+    }
+
+    .topbar-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 9px 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .nav {
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 17px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      background: var(--dark);
+      color: white;
+      font-family: Georgia, serif;
+      font-weight: 900;
+      font-size: 22px;
+    }
+
+    .brand-title {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--blue);
+      letter-spacing: -.03em;
+      white-space: nowrap;
+    }
+
+    .brand-sub {
+      margin-top: 4px;
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .links {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .links a {
+      color: #344054;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 9px 12px;
+      transition: .2s ease;
+    }
+
+    .links a:hover {
+      background: #eef4fb;
+      color: var(--blue);
+    }
+
+    .hero {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 34px 24px 0;
+      display: grid;
+      grid-template-columns: 1.04fr .96fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .hero-copy {
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: clamp(36px, 5vw, 70px);
+      min-height: 620px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy::after {
+      content: "∫  ∑  ∂  ∇  π  λ  Ω";
+      position: absolute;
+      right: -110px;
+      bottom: -20px;
+      font-family: Georgia, serif;
+      font-size: 112px;
+      color: rgba(0,59,122,.055);
+      white-space: nowrap;
+      transform: rotate(-8deg);
+    }
+
+    .label {
+      color: var(--red);
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: clamp(58px, 8vw, 116px);
+      line-height: .92;
+      letter-spacing: -.085em;
+      color: var(--dark);
+      margin-bottom: 26px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .gold { color: var(--gold); }
+
+    .lead {
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 0;
+      padding: 13px 18px;
+      font-weight: 850;
+      transition: .2s ease;
+      font-size: 15px;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .primary { background: var(--blue); color: #fff; }
+    .secondary { background: #eef4fb; color: var(--blue); border: 1px solid var(--line); }
+
+    .hero-visual {
+      min-height: 620px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--dark);
+      color: white;
+    }
+
+    .hero-visual img {
+      width: 100%;
+      height: 100%;
+      min-height: 620px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: saturate(1.02) contrast(1.03);
+    }
+
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(11,18,32,.02), rgba(11,18,32,.72));
+      pointer-events: none;
+    }
+
+    .profile-tag {
+      position: absolute;
+      top: 26px;
+      right: 26px;
+      z-index: 3;
+      background: rgba(255,255,255,.14);
+      backdrop-filter: blur(12px);
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,.16);
+      color: white;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .visual-caption {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      z-index: 3;
+      border-left: 4px solid var(--gold);
+      padding: 18px 20px;
+      background: rgba(11,18,32,.45);
+      backdrop-filter: blur(14px);
+    }
+
+    .visual-caption b { display: block; font-size: 24px; letter-spacing: -.04em; margin-bottom: 6px; }
+    .visual-caption span { color: rgba(255,255,255,.78); font-size: 14px; }
+
+    .quick-grid {
+      max-width: 1280px;
+      margin: 24px auto 0;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .quick-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 24px;
+      min-height: 150px;
+      transition: .22s ease;
+    }
+
+    .quick-card:hover { transform: translateY(-4px); box-shadow: 0 18px 44px rgba(23,50,90,.10); border-color: var(--blue); }
+    .quick-card b { display: block; color: var(--blue); font-size: 26px; letter-spacing: -.05em; margin-bottom: 8px; }
+    .quick-card span { color: var(--muted); font-size: 14px; }
+
+    .section {
+      max-width: 1280px;
+      margin: 72px auto 0;
+      padding: 0 24px;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: .72fr 1fr;
+      gap: 34px;
+      align-items: end;
+      margin-bottom: 26px;
+      border-top: 2px solid var(--dark);
+      padding-top: 22px;
+    }
+
+    h2 {
+      font-size: clamp(34px, 4.5vw, 58px);
+      line-height: 1;
+      letter-spacing: -.065em;
+      color: var(--dark);
+    }
+
+    .section-desc {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 820px;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .panel {
+      background: white;
+      border: 1px solid var(--line);
+      padding: 34px;
+      transition: .22s ease;
+    }
+
+    .panel:hover { transform: translateY(-4px); border-color: var(--blue); box-shadow: 0 18px 44px rgba(23,50,90,.08); }
+
+    .panel small {
+      color: var(--red);
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .panel h3 {
+      font-size: 30px;
+      line-height: 1.08;
+      letter-spacing: -.055em;
+      color: var(--dark);
+      margin: 10px 0 14px;
+    }
+
+    .panel p { color: var(--muted); font-size: 16px; }
+
+    .pathway {
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .path-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 20px;
+      padding: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .path-item:last-child { border-bottom: 0; }
+
+    .tag {
+      background: var(--dark);
+      color: white;
+      min-height: 74px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-weight: 950;
+      line-height: 1.05;
+      padding: 10px;
+    }
+
+    .tag small { display: block; opacity: .7; font-size: 12px; margin-top: 4px; }
+
+    .path-item h3 { color: var(--dark); font-size: 22px; letter-spacing: -.04em; margin-bottom: 6px; }
+    .path-item p { color: var(--muted); font-size: 15px; }
+
+    .quote {
+      background: var(--dark);
+      color: #fff;
+      padding: 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote::before {
+      content: "∑";
+      position: absolute;
+      left: 24px;
+      top: -52px;
+      font-family: Georgia, serif;
+      font-size: 230px;
+      color: rgba(255,255,255,.055);
+    }
+
+    .quote p {
+      position: relative;
+      max-width: 980px;
+      font-size: clamp(28px, 4vw, 52px);
+      line-height: 1.18;
+      letter-spacing: -.06em;
+      margin-bottom: 18px;
+    }
+
+    .quote span { position: relative; color: rgba(255,255,255,.68); }
+
+    footer {
+      max-width: 1280px;
+      margin: 44px auto 0;
+      padding: 24px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero, .section-head, .profile-grid { grid-template-columns: 1fr; }
+      .quick-grid { grid-template-columns: repeat(2, 1fr); }
+      .links { display: none; }
+      .hero-copy, .hero-visual { min-height: auto; }
+      .hero-visual img { height: 560px; min-height: 560px; }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner, .nav-inner, .hero, .quick-grid, .section, footer { padding-left: 16px; padding-right: 16px; }
+      .brand-sub { display: none; }
+      .quick-grid { grid-template-columns: 1fr; }
+      .hero-copy, .panel, .quote { padding: 30px; }
+      .path-item { grid-template-columns: 1fr; }
+      .hero-visual img { height: 460px; min-height: 460px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span>Shanghai University · College of Sciences</span>
+      <span>Mathematics · Logic · Leadership</span>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-mark">∑</div>
+        <div>
+          <div class="brand-title">崔数｜数学系人物介绍</div>
+          <div class="brand-sub">Department of Mathematics · Shanghai University</div>
+        </div>
+      </div>
+      <div class="links">
+        <a href="#about">人物概览</a>
+        <a href="#ability">数学能力</a>
+        <a href="#logic">逻辑精神</a>
+        <a href="#leader">系内影响</a>
+        <a href="#ending">结语</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-copy reveal">
+      <div class="label">Mathematics · Logic · Leadership</div>
+      <h1>崔数<br><span class="gold">太阳</span></h1>
+      <p class="lead">上海大学理学院数学系代表性人物之一。以扎实的数学基础、严密的逻辑思维与稳定专注的学术气质受到认可。“太阳”这一称呼，象征其在数学学习、学术交流与精神气质上的影响力。</p>
+      <div class="actions">
+        <a class="btn primary" href="#about">了解人物 →</a>
+        <a class="btn secondary" href="#ability">查看数学能力</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <img src="profile.jpg" alt="崔数人物头像" />
+      <div class="profile-tag">Shanghai University · Mathematics</div>
+      <div class="visual-caption">
+        <b>以数学为骨，以逻辑为锋</b>
+        <span>上海大学理学院数学系人物主页 · Mathematics · Logic · Academic Spirit</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="quick-grid">
+    <div class="quick-card reveal"><b>Analysis</b><span>数学分析与抽象问题理解能力</span></div>
+    <div class="quick-card reveal"><b>Logic</b><span>证明推导、逻辑闭环与严谨表达</span></div>
+    <div class="quick-card reveal"><b>Modeling</b><span>从具体问题中提炼结构与方法</span></div>
+    <div class="quick-card reveal"><b>Leadership</b><span>数学系精神象征与学术影响力</span></div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="section-head reveal">
+      <h2>人物概览</h2>
+      <p class="section-desc">这个网页专注呈现崔数在数学系语境下的能力与气质：不是简单堆砌头衔，而是突出数学训练、逻辑思维、抽象能力与作为数学系代表人物的精神象征。</p>
+    </div>
+    <div class="profile-grid">
+      <div class="panel reveal"><small>01 Background</small><h3>数学专业背景</h3><p>就读于上海大学数学与应用数学专业，长期接受数学分析、高等代数、抽象结构与逻辑推导训练，形成了稳定扎实的数学底色。</p></div>
+      <div class="panel reveal"><small>02 Symbol</small><h3>“太阳”的人物意象</h3><p>“太阳”不仅是昵称，也是一种数学系内部的精神符号：代表热爱、稳定、专注与不断向上的学术气质。</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="ability">
+    <div class="section-head reveal">
+      <h2>数学能力</h2>
+      <p class="section-desc">数学能力不仅体现为会计算，更体现为能否看清问题结构、建立逻辑链条，并用严谨语言表达复杂思想。</p>
+    </div>
+    <div class="profile-grid">
+      <div class="panel reveal"><small>Mathematical Analysis</small><h3>分析与推导能力</h3><p>能够从函数、极限、连续、收敛等核心概念出发理解问题本质，重视推导过程的完整性与严谨性。</p></div>
+      <div class="panel reveal"><small>Abstract Thinking</small><h3>抽象结构能力</h3><p>善于将具体问题提升为结构化问题，在不同数学对象之间建立联系，体现出高等数学学习中重要的抽象能力。</p></div>
+      <div class="panel reveal"><small>Problem Solving</small><h3>复杂问题处理</h3><p>面对复杂问题时，能够先拆解条件，再寻找关键结构，最后建立清晰的解决路径。</p></div>
+      <div class="panel reveal"><small>Academic Expression</small><h3>数学表达能力</h3><p>强调定义、定理、证明之间的关系，注重数学语言的准确性、层次感和逻辑闭环。</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="logic">
+    <div class="section-head reveal">
+      <h2>逻辑精神</h2>
+      <p class="section-desc">数学真正训练的是一种思维方式：在复杂世界中保持理性，在抽象结构中寻找秩序，在严密推导中接近真理。</p>
+    </div>
+    <div class="pathway reveal">
+      <article class="path-item">
+        <div class="tag">Step 01<small>Observe</small></div>
+        <div><h3>观察问题</h3><p>先判断问题的核心结构，而不是急于计算；从条件、对象和目标之间寻找关系。</p></div>
+      </article>
+      <article class="path-item">
+        <div class="tag">Step 02<small>Abstract</small></div>
+        <div><h3>抽象建模</h3><p>将具体问题转化为数学语言，用变量、集合、映射、空间或结构表达问题本质。</p></div>
+      </article>
+      <article class="path-item">
+        <div class="tag">Step 03<small>Prove</small></div>
+        <div><h3>严谨推导</h3><p>通过定义、定理和逻辑链条完成证明，避免依赖模糊直觉。</p></div>
+      </article>
+      <article class="path-item">
+        <div class="tag">Step 04<small>Reflect</small></div>
+        <div><h3>反思提升</h3><p>从一个问题回到一类问题，总结方法，形成可迁移的数学理解。</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="leader">
+    <div class="section-head reveal">
+      <h2>理学院数学系中的影响力</h2>
+      <p class="section-desc">作为数学系中具有辨识度的人物形象，崔数的意义不只在于个人能力，更在于他代表了一种数学系学生共同追求的精神状态。</p>
+    </div>
+    <div class="profile-grid">
+      <div class="panel reveal"><small>Focus</small><h3>专注</h3><p>数学学习需要长期投入、反复思考和稳定心态。专注，是其最重要的学术气质之一。</p></div>
+      <div class="panel reveal"><small>Rigor</small><h3>严谨</h3><p>从每一个定义到每一步推导，都体现数学训练对准确性和逻辑性的要求。</p></div>
+      <div class="panel reveal"><small>Energy</small><h3>能量</h3><p>“太阳”象征持续发光，也象征在数学学习共同体中给人带来方向感和力量感。</p></div>
+      <div class="panel reveal"><small>Vision</small><h3>远见</h3><p>数学不仅是专业课程，更是一种理解科学、技术与未来社会的基础语言。</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="ending">
+    <div class="quote reveal">
+      <p>以数学为骨，以逻辑为锋；以“太阳”之名，诠释理性、专注与不断探索的数学精神。</p>
+      <span>崔数｜上海大学理学院数学系人物介绍</span>
+    </div>
+  </section>
+
+  <footer>
+    <span>崔数人物介绍网页 · Mathematics Profile</span>
+    <span>Shanghai University · College of Sciences</span>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
